@@ -1,6 +1,8 @@
 # LarnGo
 A repository with simple projects ive made for me to learn go
 
+Focus will be on the use of mathematical functionalitys with [gonum](https://www.gonum.org/)
+
 Projects to make, in order to learn go
 - [ ] Graph the normal gaussian distribution 
 - [ ] Graph several common distributions on top of each other
