@@ -90,9 +90,76 @@ func switchTest() {
 		fmt.Printf("there was no matching case...\n")
 	}
 }
+
+func pointerTest() {
+	fmt.Printf("==============Pointers======================\n")
+	g := 1337.5
+	p := &g
+	// more explicit pointer extraction
+	var p_1 *float64 = &g
+
+	fmt.Printf("The value g:%f have the pointer %d\n", g, p)
+	if p == p_1 {
+		fmt.Printf("Yes, both methods gave the same address\n")
+	}
+
+	// we can also ofc change values through pointer deferal
+	*p = 55
+	fmt.Printf("now the variable g have the value %d\n", uint64(*p))
+}
+
+func structTest() {
+	fmt.Printf("==============STRUCT======================\n")
+	// a struct is created like this
+	type myStruct struct {
+		a int
+		b float64
+		c string
+	}
+	// instance
+	a := myStruct{1, 15.8982384, "hello"}
+	b := myStruct{}
+
+	// neat we can print a whole struct with the print function
+	fmt.Println(a, b)
+
+	b.c = "this is a new value"
+	fmt.Println(b)
+
+	c := myStruct{c: "jifejiofjeoi", b: 83294.234432}
+
+	fmt.Println(c)
+}
+
+func array_sliceTest() {
+	fmt.Printf("==============Array======================\n")
+	// a int array with 10 slots
+	var a [10]int
+	fmt.Println(a)
+
+	b := []float32{12.152, 1232.156, 92304.99} // I think this is a "slice", whatever that is... okay its a dynamic array
+	fmt.Println(b)
+	fmt.Printf("The type of b is %T\nThe type of a is %T\n", b, a)
+
+	c := [3]float32{12.152, 1232.156}
+	fmt.Println(c)
+
+	fmt.Printf("==============SLICE======================\n")
+	d := [10]int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+	fmt.Println(d)
+
+	var myslice []int = d[4:8]
+	fmt.Println(myslice)
+	fmt.Printf("The type of my slize is %T\n", myslice)
+
+}
+
 func main() {
 	variableTests()
 	forLoopTests()
 	ifTests()
 	switchTest()
+	pointerTest()
+	structTest()
+	array_sliceTest()
 }

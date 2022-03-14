@@ -111,3 +111,61 @@ Its like a function wrapper inside a function? the statement is executed after t
 
 we can have multiple defers in a single function, and they are executed in last-in-first-out manner, after the surounding functino is done.
 
+<hr>
+**POINTERS**
+i feel rusty on this subject, i hope i will de-rust fast ^^
+
+& gives the momory address
+* gives the value the address points to
+
+g := 123
+address of g is found with
+p := &g
+
+the data type of p is ASTERIX-DATATYPE
+g = int -> &g = *int
+
+i remember,in c, we can have a 16-byte number, extract its address and read it like a 8-byte number, donno if we can do it in go tho...
+
+<hr>
+**STRUCTS**
+Yay, always liked structs :)
+
+type STRUCTNAME struct{
+    var1 DATATYPE
+    var2 DATATYPE
+}
+
+instance := STRUCTNAME{value1,value2,...}
+
+Instance with no initial values 
+instance := STRUCTNAME{}
+
+Struct uses the dot (.) notation like normal
+
+We can create a struct instance and only set a subset of the fields with their name
+
+instance := STRUCTNAME{FIELDn : VALUEn, FIELD: VALUE}
+
+<hr>
+**ARRAYS**
+Arrays seems pretty normal aswell.
+Declaration can be done in 3 main ways it seems
+- size
+- size and some initial values
+
+> var a [5]int
+
+> a := [5]int{1,2}
+
+Its odd, feels like i should be able to use the first notation and also apply values, but guess not.
+
+Arrays can also be displayed nicely with print function.
+
+<hr>
+**SLICE**
+Wait. A slice is not a dynamic array as im used to it. Its a dynamic window to view elements of an array.
+I dont really see the need for this... Must be more to this.
+
+Soooo, a slice only reference another array/section of array. Canging values in the slice changes the arrays value at that location.
+
