@@ -169,3 +169,27 @@ I dont really see the need for this... Must be more to this.
 
 Soooo, a slice only reference another array/section of array. Canging values in the slice changes the arrays value at that location.
 
+But slices have both a capacity and lenght property we can read...
+cap = length of underlying array
+len = lenght of slice.
+
+slices of no length have value nil
+
+There is a function called make(), which sounds a bit like malloc on the surface.
+We can create a slice with make and specify its lenght and capacity in the make arguments.
+
+>`a:= make([]int,5,10)` Creates a slice with capacity 10 and initial lenght of 5
+
+When making the tour, i get a feeling that slices are the prefered way of working with arrayed-data.
+Slices can also store slices. So thats also neat. that way, we can create a N-d slice.
+
+Aiit, here it comes. Slices can be extended with the use of [`append()`](https://pkg.go.dev/builtin#append).
+
+<hr>
+**RANGE**
+Range works like itterate in python. nice in for loops. They return both the index of the array and the value at that position. making stuff neat.
+
+`for INDEX, VALUE := range ARRAY {logic}`
+
+> We can ignore outputs from functions with the use of `_`. its like `~` in matlab.
+
